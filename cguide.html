@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>C: The Basics</title>
+    <link href="cguide.css" rel="stylesheet" type="text/css" />
+    <link rel="icon" href="Cicon.png" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Lato|Spartan&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <nav id="navbar">
+        <header>C: The Basics</header>
+        <ul>
+            <li><a href="#Introduction" class="navlink">Introduction</a></li>
+            <li><a href="#Keywords" class="navlink">Keywords</a></li>
+            <li><a href="#Identifiers" class="navlink">Identifiers</a></li>
+            <li><a href="#Variables" class="navlink">Variables</a></li>
+            <li><a href="#Output" class="navlink">Output</a></li>
+        </ul>
+    </nav>
+    <main id="maindoc">
+        <header class="mainsection" id="Introduction">Introduction</header>
+        <p>C is a multi-purpose procedural programming language that maps efficiently to general machine instructions and assembly language.  It is widely used in computer operating systems and application software for computers. It was developed at Bell Labs in the 1970s and has since become one of the most widely used programming languages worldwide. C compilers are available for the majority of computer architectures and operating systems.</p>
+        <p>This guide will cover the basics of C syntax and functionality. Some basic familiarity with computer programming concepts will be helpful, but is not required.</p>
+        <header class="mainsection" id="Keywords">Keywords</header>
+        <p>Keywords are predefined words used to communicate specific meanings to the compiler. For example, in C, a commonly used keyword is<code class="inlinecode">int</code>, which is used to represent an integer. You can declare a variable of type integer in the following way:</p>
+        <code> <strong>int</strong> rabbits;</code>
+        <p>Here, <code class="inlinecode">int</code> is a keyword that indicates <code class="inlinecode">rabbits</code> is a variable of type <code class="inlinecode">int</code> (integer). Probably we would use it to count, understand, or reproduce a number of rabbits.</p>
+        <p>There are a great many keywords you will use in C as you learn more, most notably <code class="inlinecode">char</code>, <code class="inlinecode">float</code>, <code class="inlinecode">double</code>, <code class="inlinecode">while</code>, and<code class="inlinecode">if</code>. &nbsp;All these keywords, their syntax, and applications will be covered in later sections.</p>
+        <header class="mainsection" id="Identifiers">Identifiers</header>
+        <p>In C, identifiers are used to give names to specific variables, functions, etc. Let's use our example from before:</p>
+        <code> <strong>int</strong> rabbits;</code>
+        <p>Remember that <code class="inlinecode">int</code> indicated a variable of type integer. In that example we were counting rabbits, so <code class="inlinecode">rabbits</code>is the identifier.  Let's check out another example:</p>
+        <code> <strong>int</strong> rabbits;</code>
+        <code> <strong>float</strong> float;</code>
+        <p>The second declaration looks weird, right? That's because the programmer used an identifier that was the same as the keyword. This is not acceptable practice in C. We could fix this code by re-naming the identifier:</p>
+        <code> <strong>int</strong> rabbits;</code>
+        <code> <strong>float</strong> carrots;</code>
+        <p>Looks better now!  Here's a full list of rules for naming identifiers in C:</p>
+        <ul>
+        	<li>A valid identifier can have letters (upper or lowercase), digits, and underscores, e.g. <code class="inlinecode">Big_Rabbits3</code>.</li>
+        	<li>The first letter of an identifier should be either a letter or an underscore (so <code class="inlinecode">3Big_Rabbits</code> would <em>not</em> be acceptable).</li>
+        	<li>You can't use keywords as an identifier.</li>
+        	<li>There are no rules as to how long an identifier can be, but it's best to keep them descriptive and meaningful, but brief. For example, <code class="inlinecode"><strong>int</strong> Rabbits_That_I_Really_Like;</code> is probably a bit excessive.</li>
+        </ul>
+        <header class="mainsection" id="Variables">Variables</header>
+        <p>In C, variables are like a container used to store data. Imagine you're moving somewhere and you had a bunch of containers. It would probably be helpful to label each of them, right? It's the same with variables in C. In fact, you've already learned how to use an identifier to name a variable:</p>
+        <code> <strong>int</strong> rabbits;</code>
+        <p>In the above example, we declared an integer variable called <code class="inlinecode">rabbits</code>. The name rabbits is actually just a symbolic representation of where the the container (memory) for rabbits is located on your computer. Declaring a variable has all sort of useful applications. Let's take a look at a simple one:</p>
+        <code> <strong>int</strong> rabbits = 50;</code>
+        <p>We've just declared that we have 50 rabbits stored at the location in our memory we've labeled <code class="inlinecode">rabbits</code>. Cool! Let's continue:</p>
+        <code> <strong>int</strong> rabbits = 50;</code>
+        <code> <strong>int</strong> carrots = rabbits - 1;</code>
+        <p>As you can see, we've now defined an additional integer variable called <code class="inlinecode">carrots</code> that will always be 1 less than the number of rabbits. If the number of rabbits changes (and it can), so will the number of carrots. This is a very simple example, but maybe you're beginning to see how it could have important applications as you learn to build more and more complex programs.</p>
+        <header class="mainsection" id="Output">Output</header>
+        <p>In C the function <code class="inlinecode">printf()</code> is one of most important output functions. It sends formatted output to your screen. Let's see an example. If we run this program below:</p>
+        <code> #include < stdio.h >
+<strong> int</strong> main()
+    {
+	<strong>printf</strong>("I really like rabbits");
+	return 0;
+    }</code>
+    	<p>Then the program will output the following to our computer:</p>
+    	<code> I really like rabbits</code>
+		<p>Again, this is a simple example, but it's one of the most important ways for us to get the computer to display information that it has returned. So how does this function work?</p>
+		<ul>
+			<li>All programs in C must contain the <code class="inlinecode">main()</code>function. Code execution begins from there.</li>
+			<li>To use <code class="inlinecode">printf()</code> in our program, we include the <code class="inlinecode">< stdio.h ></code> header file at the top of our code. Stdio is a kind of library containing useful C functions, so we have to list where we're getting the functions from.</li>
+			<li>The <code class="inlinecode">return 0;</code> statement is a kind of exit for the program. It's technically optional in this program, but it's good practice to include it in your code.</li>
+		</ul>
+		<header class="mainsection" id="Sources">Sources</header>
+		<p>In the next section, we'll cover some more output syntax, some more functions, and an introduction to arrays.</p>
+		<p>Sources: <a href="https://en.wikipedia.org/wiki/C_(programming_language)">[1]</a> <a href="https://www.geeksforgeeks.org/c-language-set-1-introduction/">[2]</a> <a href="https://www.w3schools.in/c-tutorial/intro/">[3]</a> <a href="https://www.programiz.com/c-programming/c-keywords-identifier">[4]</a></p>
+    </main>
+</body>
+
+</html>

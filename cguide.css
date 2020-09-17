@@ -1,0 +1,152 @@
+body {
+	background-color: #fefefd;
+	color: #191918;
+	line-height: 1.5;
+	min-width: 290px;
+}
+
+#navbar {
+	position: fixed;
+	min-width: 250px;
+	top: 0px;
+	left: 0px;
+	width: 280px;
+	height: 100%;
+	border-right: 2px solid;
+	border-color: #191918;
+}
+
+header {
+	margin: 1rem;
+	font-family: Spartan;
+	color: #191918;
+	text-align: center;
+	font-size: 1.8rem;
+	text-decoration: underline;
+	text-decoration-color: #b64e55;
+}
+
+#navbar ul {
+	font-family: Lato;
+	height: 90%
+	padding: 0;
+	overflow-y: auto;
+	overflow-x: hidden;
+	margin-left: -42px;
+}
+
+#navbar li {
+	list-style: none;
+	position: relative;
+	border-top: 2px solid;
+	width: 100%;
+}
+
+#navbar a {
+	display: block;
+	padding: 15px 30px;
+	text-decoration: none;
+	cursor: pointer;
+	color: #191918;
+	transition:color .5s ease-out, background .8s ease-in;
+}
+
+#navbar a:hover {
+	color: #b64e55;
+}
+
+#maindoc {
+	position: absolute;
+	margin-left: 310px;
+	padding: 20px;
+	margin-bottom: 3rem;
+}
+
+#maindoc header {
+	text-align: left;
+	margin: 0px;
+	font-size: 1.6rem;
+}
+
+#maindoc ul {
+	line-height: 1.5;
+	max-width: 90%;
+}
+
+p, li {
+	font-family: Lato;
+}
+
+code {
+	background-color: #c9e9e7;
+	color: black;
+	padding: 0.5rem;
+	display: block;
+	position: relative;
+	word-break: normal;
+	word-wrap: normal;
+	line-height: 2;
+	margin: 1rem;
+	border-radius: 5px;
+	font-weight: 500;
+	font-size: 1.1rem;
+	white-space: pre;
+	width: 50%;
+}
+
+.inlinecode {
+	background-color: #c9e9e7;
+	display: inline;
+	padding: 0.1rem;
+	color: black;
+	line-height: 1;
+	font-size: 1.1rem;
+	font-weight: 500;
+	margin: 0.25rem;
+	word-break: normal;
+	word-wrap: normal;
+}
+
+
+@media screen and (max-width: 500px) {
+	#navbar {
+		min-width: 89px;
+		width: 90px;
+	}
+
+	header {
+		font-size: 1rem;
+	}
+
+	#navbar ul {
+		margin-left: -60px;
+	}
+
+	#navbar a {
+		font-size: 0.7rem;
+	}
+
+	#maindoc {
+		margin-left: 80px;
+		width: 65vw;
+	}
+
+	#maindoc header {
+		font-size: 1.2rem;
+	}
+
+	p, li {
+		font-size: 0.75rem;
+	}
+
+	code {
+		font-size: 0.75rem;
+		width: 97%;
+		margin-left: 0;
+	}
+
+	.inlinecode {
+		font-size: 0.78rem;
+	}
+}
+
